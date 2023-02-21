@@ -1,6 +1,7 @@
 import pytest
 from modules.api.clients.github import GitHub
 from modules.common.database import Database
+from modules.ui.page_objects.sign_in_page import SignInPage
 
 
 class User:
@@ -39,3 +40,14 @@ def github_api():
 def database():
     database = Database()
     yield database
+
+
+@pytest.fixture
+def sign_in_page():
+    # створюємо обєкт сторінки
+    sign_in_page = SignInPage()
+    # відкриваємо сторінку https://github.com/login
+    sign_in_page.go_to()
+
+    # закриваємо браузер
+    yield sign_in_page
