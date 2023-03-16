@@ -63,11 +63,10 @@ def test_product_delete(database):
 def test_detailed_orders(database):
     """The test outputs the result of get_detailed_orders method.
     To check that the number of results is 1.
-    To check that the returned data corresponds to the specified."""
+    To check structure of data"""
     orders = database.get_detailed_orders()
     print("Замовлення", orders)
-    # Check quantity of orders equel to 1
+    
     assert len(orders) == 1
 
-    # Check structure of data
     assert orders[0] == (1, 'Sergii', 'солодка вода', 'з цукром')
