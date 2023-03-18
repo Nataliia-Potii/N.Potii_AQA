@@ -24,3 +24,9 @@ class BasePage:
         The object's method closes the open browser.
         """
         self.driver.close()
+
+    def check_title(self, expected_title):
+        """
+        To check if the page header matches what is expected.
+        """
+        return self.driver.title == expected_title

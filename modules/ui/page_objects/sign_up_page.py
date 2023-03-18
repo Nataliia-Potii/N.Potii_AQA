@@ -61,10 +61,3 @@ class SignUpPage(BasePage):
         """
         btn_elem = self.driver.find_element(By.XPATH, "/html/body/div[2]/section/div/div/div[2]/div/form/button")
         btn_elem.click()
-
-    def check_title(self, expected_title):
-        """
-        To check if the page header matches what is expected.
-        """
-        return self.driver.title == expected_title
-

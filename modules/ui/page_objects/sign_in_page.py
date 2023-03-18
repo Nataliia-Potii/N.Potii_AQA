@@ -40,9 +40,3 @@ class SignInPage(BasePage):
         """
         btn_elem = self.driver.find_element(By.NAME, "commit")
         btn_elem.click()
-
-    def check_title(self, expected_title):
-        """
-        To check if the page header matches what is expected.
-        """
-        return self.driver.title == expected_title
