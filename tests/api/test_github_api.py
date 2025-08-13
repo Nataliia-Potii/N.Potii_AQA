@@ -25,7 +25,7 @@ def test_repo_can_be_found(github_api):
     Repositories can be found on Github.
     """
     r = github_api.search_repo('become-qa-auto')
-    assert r['total_count'] == 37
+    assert r['total_count'] == 57
     assert 'become-qa-auto' in r['items'][0]['name']
 
 

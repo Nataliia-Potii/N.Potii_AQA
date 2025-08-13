@@ -9,11 +9,11 @@ class SignInPage(BasePage):
     """
     URL = 'https://github.com/login'
 
-    def init(self):
+    def init(self, driver):
         """
         Calling the constructor of the parent class.
         """
-        super().init()
+        super().__init__(driver)
 
     def go_to(self):
         """
@@ -71,7 +71,6 @@ class SignInPage(BasePage):
         """
         terms_link = self.driver.find_element(By.XPATH, "/html/body/div[1]/div[4]/ul/li[1]/a")
         terms_link.click()
-        time.sleep(1)
 
     def click_privacy(self):
         """
@@ -79,15 +78,13 @@ class SignInPage(BasePage):
         """
         privacy_link = self.driver.find_element(By.XPATH, "/html/body/div[1]/div[4]/ul/li[2]/a")
         privacy_link.click()
-        time.sleep(1)
 
-    def click_security(self):
+    def click_data(self):
         """
         To find the security link and click it.
         """
         security_link = self.driver.find_element(By.XPATH, "/html/body/div[1]/div[4]/ul/li[3]/a")
         security_link.click()
-        time.sleep(1)
 
     def click_contact(self):
         """
@@ -95,4 +92,3 @@ class SignInPage(BasePage):
         """
         contact_link = self.driver.find_element(By.CLASS_NAME, "Link--secondary")
         contact_link.click()
-        time.sleep(1)

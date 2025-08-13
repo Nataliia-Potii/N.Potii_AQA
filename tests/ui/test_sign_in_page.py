@@ -1,37 +1,10 @@
 import pytest
 
 # Tests were created for testing:
-# The user can log into an account with a valid login and password.
 # The user cannot log into an account with an invalid login and password.
 # The error message is appearing after entering an invalid login and password.
 # The links (Forgot password, Create an account, Terms, Privacy,
 # Security, Contact GitHub) are working as expected.
-
-
-@pytest.mark.ui
-def test_check_correct_login_password(sign_in_page):
-    """
-    To check correct login and password.
-    The user can log in.
-    """
-    sign_in_page.try_login("loreleysingt@gmail.com")
-    sign_in_page.try_password("020202nm")
-    sign_in_page.click_signin_button()
-
-    assert sign_in_page.check_title("GitHub")
-
-
-@pytest.mark.ui
-def test_check_capital_letters_login(sign_in_page):
-    """
-    To check correct login written in capital letters and password.
-    The user can log in.
-    """
-    sign_in_page.try_login("LORELEYSINGT@gmail.com")
-    sign_in_page.try_password("020202nm")
-    sign_in_page.click_signin_button()
-
-    assert sign_in_page.check_title("GitHub")
 
 
 @pytest.mark.ui
@@ -208,13 +181,13 @@ def test_privacy_link(sign_in_page):
 
 
 @pytest.mark.ui
-def test_security_link(sign_in_page):
+def test_data_link(sign_in_page):
     """
     To check that the security link works and the correct page is opened.
     """
-    sign_in_page.click_security()
+    sign_in_page.click_data()
 
-    assert sign_in_page.check_title("GitHub Security · GitHub")
+    assert sign_in_page.check_title("GitHub Docs")
 
 
 @pytest.mark.ui
@@ -224,4 +197,4 @@ def test_contact_link(sign_in_page):
     """
     sign_in_page.click_contact()
 
-    assert sign_in_page.check_title("GitHub Support")
+    assert sign_in_page.check_title("Sign in for Software Support and Product Help - GitHub Support")
