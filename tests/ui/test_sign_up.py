@@ -68,7 +68,7 @@ def test_check_symbols_email(sign_up_page):
     To check the email with invalid symbols.
     """
     sign_up_page.click_cookie()
-    sign_up_page.check_email("!!!##@^^^.**$")
+    sign_up_page.check_email("!!!#^&*#@^^^.**$")
     sign_up_page.check_firstname("N")
     sign_up_page.check_lastname("N")
     sign_up_page.check_password("111111")
